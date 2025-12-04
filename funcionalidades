@@ -1,0 +1,61 @@
+🎯 Funcionalidades
+1. Banco de Dados Vetorial
+20 receitas fitness categorizadas
+
+-Busca por similaridade semântica
+
+-Persistência local (offline)
+
+2. Sistema de Busca Inteligente
+Entende sinônimos e contexto
+
+-Ordena por relevância
+
+-Respostas em <100ms
+
+3. API REST
+-Endpoints simples e documentados
+
+-Pronto para integração com n8n
+
+-Formato JSON padronizado
+
+📊 Estrutura de Dados
+Exemplo de Receita
+{
+  "id": "1",
+  "nome": "Omelete de Espinafre",
+  "categoria": "proteica",
+  "calorias": 280,
+  "tags": ["café", "rápido", "low-carb"]
+}
+Categorias
+-Proteica (5 receitas)
+
+-Low-Carb (5 receitas)
+
+-Energética (5 receitas)
+
+-Rápida (5 receitas)
+🔗 Integração
+Para n8n
+GET http://localhost:8000/buscar?q=sua+consulta
+
+Exemplo de Resposta
+{
+  "consulta": "receita proteica",
+  "resultados": [
+    {
+      "nome": "Omelete de Espinafre",
+      "categoria": "proteica",
+      "similaridade": 0.92,
+      "calorias": 280
+    }
+  ]
+}
+
+🧪 Testes Realizados
+Consulta	Resultado Esperado	Status
+"receita proteica"	Omelete, Frango	✅
+"low-carb jantar"	Abobrinha, Berinjela	✅
+"rápido almoço"	Wrap, Sanduíche	✅
